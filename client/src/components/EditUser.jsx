@@ -57,7 +57,7 @@ export default function EditUser() {
   },[])
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col  bg-white">
       <div className="flex-grow p-6">
         <div className="max-w-2xl mx-auto">
           <div className="flex items-center mb-6">

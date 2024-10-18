@@ -2,6 +2,16 @@ import axios from "axios"
 
 const endpoint = import.meta.env.VITE_API_ENDPOINT
 
+
+const registerUser = async({name , email , password})=>{
+    try {
+        const res = await axios.post(`${endpoint}/api/register` , {name , email , password})
+        return res.data.success
+    } catch (error) {
+        return false
+    }
+}
+
 const getUser = async () => {
     try {
         const user = await axios.get(`${endpoint}/api/me`, { withCredentials: true })
@@ -136,4 +146,4 @@ const updateUser = async({ name, mobile, email, role, avatar })=>{
 }
 
 
-export { getUser, loginUser, logout, forgetPassword, getAllUsers, deleteUser, addUser,getUserById,updateUser }
+export { getUser, loginUser, logout, forgetPassword, getAllUsers, deleteUser, addUser,getUserById,updateUser,registerUser }

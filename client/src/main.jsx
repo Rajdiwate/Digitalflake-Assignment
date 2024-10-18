@@ -16,6 +16,7 @@ import Protected from './components/AuthLayout.jsx';
 import { Provider } from 'react-redux';
 import { store } from './redux/store.js';
 import { DeleteProvider } from './context/deleteContext.jsx';
+import { LoginSignupProvider } from './context/loginSignupContext.jsx';
 import EditRole from './components/UpdateRole.jsx';
 import AddRole from './components/AddRole.jsx';
 import AddUser from './components/AddUser.jsx';
@@ -79,7 +80,9 @@ createRoot(document.getElementById('root')).render(
     <Provider store={store}>
       <DeleteProvider>
         <LogoutProvider>
+          <LoginSignupProvider>
           <RouterProvider router={router} />
+          </LoginSignupProvider>
         </LogoutProvider>
       </DeleteProvider>
     </Provider>

@@ -118,7 +118,7 @@ const Users = () => {
                     <tr key={user.id} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
                       <td className="p-3">{user.userId}</td>
                       <td className="p-3">{user.name}</td>
-                      <td className="p-3">{user.mobile}</td>
+                      <td className="p-3">{user.mobile? user.mobile : "NA"}</td>
                       <td className="p-3">{user.email}</td>
                       <td className="p-3">{user.role}</td>
                       <td className="p-3">

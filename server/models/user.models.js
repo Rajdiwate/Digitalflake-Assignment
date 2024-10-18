@@ -34,7 +34,6 @@ const userSchema = new Schema(
         },
         mobile: {
             type: Number,
-            required : true
         },
         status: {
             type: String,
@@ -57,7 +56,7 @@ const userSchema = new Schema(
         role:
         {
             type: String,
-            required : true,
+            default : "Active"
         }
         ,
         refreshToken: {

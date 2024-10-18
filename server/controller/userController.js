@@ -24,7 +24,7 @@ const generateTokens = async (userId) => {
 const registerUser = async (req, res, next) => {
     try {
 
-        const { name, email, password, mobile, role } = req.body
+        const { name, email, password } = req.body
 
         // Check if name, email, and password are provided
         if (!name || !email || !password) {
@@ -38,7 +38,7 @@ const registerUser = async (req, res, next) => {
         }
 
         // Create a new user
-        const user = await User.create({ name, email, password, mobile, role });
+        const user = await User.create({ name, email, password });
 
         // Select the user without password and refreshToken fields
         const createdUser = await User.findById(user._id).select("-password -refreshToken");
